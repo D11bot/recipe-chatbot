@@ -1,7 +1,7 @@
 # Recipe Chatbot
 
 Tell it what you have, or send a fridge photo. It suggests recipes from a recipe database,
-builds a shopping list of what is missing, and compares prices at the Willys and Hemköp
+builds a shopping list of what is missing, and compares prices at the ICA, Willys and Hemköp
 stores nearest you.
 
 ## My contributions — Dan Zhang
