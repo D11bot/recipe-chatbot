@@ -4,6 +4,29 @@ Tell it what you have, or send a fridge photo. It suggests recipes from a recipe
 builds a shopping list of what is missing, and compares prices at the Willys and Hemköp
 stores nearest you.
 
+## My contributions — Dan Zhang
+
+This is my portfolio fork of a [team recipe-assistant project](https://github.com/internationalJoke/recipe-chatbot/tree/ontology-matching). My work focused on the recipe engine, its integration with LLM tools, and containerizing the recipe service.
+
+**Skills demonstrated:** Python, FastAPI, REST APIs, LLM tool integration, Docker, Docker Compose, Git and GitHub collaboration.
+
+| Area | My implementation |
+|---|---|
+| Recipe engine | Implemented a FastAPI service with recipe-recommendation and missing-ingredient endpoints over structured recipe data. |
+| LLM tool integration | Added tools that call the recipe service and updated the system prompt to use the recipe database for recommendations. |
+| Docker | Wrote the recipe-service Dockerfile using `python:3.12-slim`, installed Python dependencies, copied the application and data, and configured Uvicorn to serve the API on port 8000. |
+| Docker Compose | Added the recipe service to the existing multi-service application, configured its build context and port mapping, and connected the backend through `RECIPE_SERVICE_URL=http://recipe-service:8000` and a startup dependency. |
+| Git collaboration | Developed and committed the integration on the `dan-recipe-integration` feature branch. The team subsequently merged this work into the shared application. |
+
+### Code and contribution history
+
+- [My implementation commit: recipe service, LLM tools and Docker integration](https://github.com/internationalJoke/recipe-chatbot/commit/4f8d0f0d1241aa4155e6ee6b404688c0d9989d67)
+- [My development branch](https://github.com/internationalJoke/recipe-chatbot/tree/dan-recipe-integration)
+- [Team merge of my recipe service](https://github.com/internationalJoke/recipe-chatbot/commit/40e1cedae9bad4a41674f15716595f142d4118b8)
+- [Team contribution statement](report/contribution.tex), which identifies Dan Zhang as responsible for the Recipe Engine.
+
+The sections below describe the integrated team application. The commit above records my original implementation; the current branch also includes subsequent team improvements.
+
 ## Run
 
 ### Mac / Linux
@@ -76,3 +99,4 @@ docker rm -f recipe-exact
 - Your location is only used to pick the nearest stores and is not saved.
 - Ingredient taxonomy: Open Food Facts, under the Open Database License
   (see `recipe-service/data/ontology/README.md`).
+
