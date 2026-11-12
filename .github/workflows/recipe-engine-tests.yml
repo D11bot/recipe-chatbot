@@ -1,0 +1,28 @@
+name: Recipe engine smoke tests
+
+on:
+  push:
+    paths:
+      - 'recipe-service/**'
+      - '.github/workflows/recipe-engine-tests.yml'
+  pull_request:
+    paths:
+      - 'recipe-service/**'
+      - '.github/workflows/recipe-engine-tests.yml'
+
+jobs:
+  synthetic-data-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install minimal test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pandas==2.2.3 "pytest>=8,<10"
+      - name: Run synthetic-data smoke tests
+        run: python -m pytest recipe-service/tests -q
