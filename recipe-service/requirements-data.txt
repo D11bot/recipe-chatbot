@@ -1,0 +1,3 @@
+# Separate dependencies for regenerating the recipe CSVs (not needed at API runtime).
+pandas==2.2.3
+ingredient-parser-nlp>=2.7,<3.0
